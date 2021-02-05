@@ -1,0 +1,126 @@
+.cube {
+    width: 100px;
+    height: 100px;
+    background: red;
+    /*transition: width 2s, height 2s, ease-in 1s;*/
+    transition: all 1s, ease-out 1s;
+  }
+  
+  .cube:hover {
+    width: 300px;
+    height: 300px;
+    background-color: orange;
+  }
+
+  .duckhunt-h1 {
+      background-color: pink;
+      width: 100%;
+      margin: auto;
+      text-align: center;
+      position: sticky;
+      transition: background-color 1s;
+  }
+
+  .sticky {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background-color: greenyellow;
+      z-index: 2;
+      text-align: center;
+  }
+
+  .dog {
+    position: absolute;
+    bottom: 50px;
+    left: 10px;
+    width: 120px;
+    height: 110px;
+    transition: left 3s linear;
+    /*Animation*/
+    background: url("sprite.png") no-repeat;
+    background-position: 0 0;
+
+    /* Chaining */
+    animation: doggoWalk 0.5s steps(4) infinite,
+    doggoSniff 0.5s 3s steps(2) infinite, 
+    doggoNotice 0.5s 6s steps(5);
+    /*
+    animation-name: doggoWalk;
+    animation-duration: 0.5s;
+    animation-timing-function: steps(4);
+    animation-iteration-count: infinite;*/
+    /*animation-direction: reverse;*/
+    /*transition: background-position 1s;*/
+  }
+
+  .fromleft {
+      left: 300px;
+  }
+
+  @keyframes doggoWalk {
+    from {background-position: 0 0;}
+    to {background-position: -480px 0;}
+  }
+
+  @keyframes doggoSniff {
+    from {background-position: -360px 0;}
+    to {background-position: -600px 0;}
+  }
+
+  @keyframes doggoNotice {
+    from {background-position: 0 -110px;}
+    to {background-position: -600px -110px;}
+  }
+
+  .duck {
+    position: absolute;
+    top: 60px;
+    left: 30px;
+    width: 70px;
+    height: 80px;
+    transition: left 3s linear;
+    /*Animation*/
+    background: url("sprite.png") no-repeat;
+    background-position: 0 0;
+    /* Chaining */
+    animation: duckFly 0.5s steps(3)infinite, 
+    duckRoute 3s 2s infinite;
+    /*
+    animation-name: doggoWalk;
+    animation-duration: 0.5s;
+    animation-timing-function: steps(4);
+    animation-iteration-count: infinite;*/
+    /*animation-direction: reverse;*/
+    /*transition: background-position 1s;*/
+  }
+
+  @keyframes duckFly {
+    from {background-position: 0 -220px;}
+    to {background-position: -240px -220px;}
+  }
+
+  @keyframes duckRoute {
+    0% {left: 30px; top: 60px;}
+    25% {left: 200px; top: 100px;}
+    50% {left: 300px; top: 50px;}
+    75% {left: 500px; top: 120px;}
+    100% {left: 800px; top: 80px;}
+  }
+
+  .stage {
+    z-index: -1;
+    width: 800px;
+    height: 481px;
+    background: url("stage.png");
+    background-size: contain;
+    position: relative;
+    overflow: hidden;
+  }
+
+  /*.dog:hover {
+    background-position: -480px 0;
+  }*/
+
+
